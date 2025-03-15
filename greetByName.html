@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <p id="greetings"></p>
+
+    <p id="names"></p>
+
+    <button onclick="generateGreeting()">Привітати</button>
+
+    <p class="output" id="greetResult"></p>
+
+
+    <script>
+
+        // --------------- міксер привітань ------------- //
+        const greetings = ["привіт", "хай", "йо", "чао", "адіос"];
+        const names = ["Петро", "Степан", "Маріна", "Чувак", "Ларіса Іванівна"];
+
+        document.getElementById("greetings").textContent = greetings.join(", ");
+        document.getElementById("names").textContent = names.join(", ");
+
+        function generateGreeting() {
+            const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            var res = `${randomGreeting}, ${randomName}!`;
+            document.getElementById("greetResult").textContent = res;
+            console.log(res);
+        }
+    </script>
+</body>
+</html>
